@@ -1,217 +1,124 @@
 import os
-
-from openai import AzureOpenAI
-
-from azure.identity import DefaultAzureCredential, get_bearer_token_provider
-
 import time
-
-import re
-
-from datetime import datetime
-
-from azure.keyvault.secrets import SecretClient   # pip install azure-keyvault-secrets
-
 import logging
-
-import hmac
-
-import hashlib
-
-import time
+from typing import List, Union, Tuple, Dict, Optional, Any
 
 import requests
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_secret():
-
-    key_vault_url = "https://code-model.vault.azure.net/"
-
-    # Create a DefaultAzureCredential object for authentication
-
-    credential = DefaultAzureCredential(additionally_allowed_tenants=["*"])
-
-    # Create a SecretClient object to interact with Key Vault
-
-    client = SecretClient(vault_url=key_vault_url, credential=credential)
-
-    # Replace with your secret name
-
-    secret_name = "gh-gpt4o-endpoint-secret"
-
-    # Retrieve the secret
-
-    retrieved_secret = client.get_secret(secret_name)
-
-    return retrieved_secret.value
-
-secret = get_secret().encode("utf-8")
+OPENROUTER_BASE_URL = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+DEFAULT_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-3.5-sonnet")
+DEFAULT_MAX_RETRY = int(os.environ.get("OPENROUTER_MAX_RETRY", "5"))
+DEFAULT_TIMEOUT = int(os.environ.get("OPENROUTER_TIMEOUT", "60"))
 
 
-def call_gh_endpoint(messages, model="gpt-4o", n=1, max_retry=500):
+class OpenRouterError(Exception):
+    """Raised when the OpenRouter API returns an error or an unexpected payload."""
 
-    hmac_key = secret # replace with secret key
 
-    current = str(int(time.time()))
+def _ensure_api_key():
+    if not OPENROUTER_API_KEY:
+        raise OpenRouterError(
+            "未检测到 OPENROUTER_API_KEY 环境变量，请参考 OpenRouter 文档配置 API Key"
+        )
 
-    hmac_value = hmac.new(hmac_key, current.encode('utf8'), hashlib.sha256).hexdigest()
 
-    request_hmac = f'{current}.{hmac_value}'
-
-    endpoint = "https://api.githubcopilot.com/chat/completions"
-
+def _build_headers(extra_headers: Dict[str, str] = None) -> Dict[str, str]:
     headers = {
-
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-
-        "Accept": "application/json",
-
-        "Copilot-Integration-Id": "code-specific-models-eval",
-
-        "Request-HMAC": request_hmac,
-
+        "HTTP-Referer": os.environ.get("OPENROUTER_HTTP_REFERER", "https://openrouter.ai"),
+        "X-Title": os.environ.get("OPENROUTER_TITLE", "EpiCoder"),
     }
+    if extra_headers:
+        headers.update(extra_headers)
+    return headers
 
-    body = {
 
+def _normalize_messages(messages: Union[str, List[Dict[str, str]]]) -> List[Dict[str, str]]:
+    if isinstance(messages, str):
+        return [{"role": "user", "content": messages}]
+    if not isinstance(messages, list):
+        raise OpenRouterError("messages 参数需要是字符串或对话列表")
+    for msg in messages:
+        if not isinstance(msg, dict) or "role" not in msg or "content" not in msg:
+            raise OpenRouterError("messages 列表每个元素必须包含 role 与 content")
+    return messages
+
+
+def call_openrouter(
+    messages: Union[str, List[Dict[str, str]]],
+    model: str = DEFAULT_MODEL,
+    n: int = 1,
+    temperature: float = 0.7,
+    top_p: float = 0.95,
+    max_retry: int = DEFAULT_MAX_RETRY,
+    timeout: int = DEFAULT_TIMEOUT,
+    extra_headers: Dict[str, str] = None,
+    extra_parameters: Dict[str, Union[str, float, int, Dict]] = None,
+) -> Tuple[str, Dict]:
+    _ensure_api_key()
+    payload_messages = _normalize_messages(messages)
+
+    body: Dict[str, Union[str, float, int, List, Dict]] = {
         "model": model,
-
-        "messages": messages,
-
-        "temperature": 0.7,
-        
-        "top_p": 0.95
+        "messages": payload_messages,
+        "temperature": temperature,
+        "top_p": top_p,
+        "n": n,
     }
 
-    res = ['error'] * n
+    if extra_parameters:
+        body.update(extra_parameters)
 
-    for i in range(max_retry):
+    url = f"{OPENROUTER_BASE_URL.rstrip('/')}/chat/completions"
+    headers = _build_headers(extra_headers)
 
+    last_exception: Optional[Exception] = None
+    for attempt in range(1, max_retry + 1):
         try:
-
-            response = requests.post(endpoint, json=body, headers=headers)
-
+            response = requests.post(url, json=body, headers=headers, timeout=timeout)
             if response.status_code == 200:
+                payload = response.json()
+                choices = payload.get("choices")
+                if not choices:
+                    raise OpenRouterError(f"响应缺少 choices 字段: {payload}")
+                message = choices[0]["message"]["content"]
+                return message, payload
 
-                choices = response.json()["choices"]
-
-                res = [choice["message"]["content"] for choice in choices]
-
-                if res[0] is None and i==0:
-
-                    logging.warning(f"none error:\nmessages={messages}\nresponse={response}")
-
-                    continue
-
-                return res[0], response.json()
-
-
-        except Exception as e:
-
-            # Get the current system time
-
-            current_time = datetime.now()       
-
-            logging.info(">" * 5, f"current time {current_time}")
-
-            logging.error(">" * 5, f"LLMs error `{e}`")
-            if response.status_code == 429:
-
-                logging.warning("too many requests sent. Will sleep 5secs.")
-
-                time.sleep(3)
-
+            if response.status_code in {429, 500, 502, 503, 504}:
+                logging.warning(
+                    "OpenRouter 调用失败 (status=%s, attempt=%s/%s): %s",
+                    response.status_code,
+                    attempt,
+                    max_retry,
+                    response.text,
+                )
+                time.sleep(min(5 * attempt, 30))
                 continue
 
-            else:
+            raise OpenRouterError(
+                f"OpenRouter 返回错误 (status={response.status_code}): {response.text}"
+            )
 
-                logging.warning(f"request error: {response.status_code}, {response.text}")
-
-                if "prompt token limit exceeded" in response.text:
-
-                    return "prompt too long", "prompt too long"
-
-                if response.status_code == 422:
-
-                    return "error", "Unprocessable Entity"
-
-            if "repetitive patterns" in str(e):
-
-                messages[-1]['content']=shorten_repeated_substrings(messages[-1]['content'])
-
-            # print(">>",f"response.text: {response}")
-
-            time.sleep(3 * (2 ** (i + 1)))
-
-            res = ['error'] * n
-
-            if str(e) in ["'content'"]:
-
-                break
-
-    logging.error("failed to call gh endpoint")
-
-    return 'error', str(response)
+        except requests.RequestException as exc:
+            logging.warning(
+                "OpenRouter 请求异常 (attempt=%s/%s): %s", attempt, max_retry, exc
+            )
+            time.sleep(min(5 * attempt, 30))
+            last_exception = exc
+    else:
+        raise OpenRouterError(f"多次重试后仍无法访问 OpenRouter: {last_exception}")
 
 
-model2deployment={
-
-    "gpt-4":"tscience-uks-gpt4-1106",
-
-    "gpt-4o":"tscience-uks-gpt-4o"
-
-}
-
-token_provider = get_bearer_token_provider(
-
-    DefaultAzureCredential(managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID")),
-
-    "https://cognitiveservices.azure.com/.default")
-
-client = AzureOpenAI(
-
-    azure_endpoint="https://aims-oai-research-inference-uks.openai.azure.com/",
-
-    azure_ad_token_provider=token_provider,
-
-    api_version="2024-05-01-preview",
-
-)
-
-def shorten_repeated_substrings(s: str) -> str:
-
-    def replacer(match):
-
-        substring = match.group(1)
-
-        count = len(match.group(0).split(substring)) - 1
-
-        return f"{substring}, {substring}, {substring}...{count} times"
-
-    # Use regex to find repeated substrings separated by comma and space
-
-    pattern = re.compile(r"((?:'\w+'|\"\w+\"|\b\w+\b))(, \1){20,}")
-
-    return pattern.sub(replacer, s)
-
-def call_gpt4(messages, model='gpt-4o',client_idx=None):
-    if isinstance(messages, str):
-        messages=messages= [{
-            "role": "user",
-            "content": messages,
-        }]
-    #return my_chat_api(messages=messages,client=client,model=model2deployment[model])
-    # print(f"messages={messages}")
-    return call_gh_endpoint(messages=messages)
-
-
-print(
-    call_gpt4(
-        messages= [{
-            "role": "user",
-            "content": "hello",
-        }],
-        model='gpt-4o-mini' # or gpt-4o
-    )
-)
+def call_gpt4(messages, model: str = DEFAULT_MODEL, **kwargs):
+    """与旧接口保持兼容，返回 (message, raw_response)"""
+    unused_keys = {"client_idx", "stream", "logprobs"}
+    filtered_kwargs: Dict[str, Any] = {}
+    for key, value in kwargs.items():
+        if key in unused_keys:
+            continue
+        filtered_kwargs[key] = value
+    return call_openrouter(messages, model=model, **filtered_kwargs)

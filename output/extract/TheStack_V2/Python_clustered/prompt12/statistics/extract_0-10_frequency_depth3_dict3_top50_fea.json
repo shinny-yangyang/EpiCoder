@@ -2,258 +2,162 @@
     "workflow": [
         "data loading",
         "data transformation",
-        "model initialization",
-        "fine-tuning",
-        "function definition",
-        "function composition",
-        "function application",
-        "HTML structure definition",
-        "CSS styling",
-        "Image embedding",
-        "send request",
-        "data visualization",
-        "pre-training",
+        "model creation",
+        "training procedure",
         "evaluation",
-        "checkpoint saving",
-        "data preprocessing",
-        "loss definition",
-        "optimizer setup",
-        "scheduler setup",
-        "training",
-        "validation",
-        "testing",
-        "model saving",
-        "data modeling",
-        "form creation",
-        "data saving",
-        "gettext compilation",
-        "gettext message extraction",
-        "model definition",
-        "form customization",
-        "admin interface customization",
-        "message compilation",
-        "system command execution",
-        "execute system command",
-        "JavaScript initialization",
-        "JavaScript functionality",
-        "data validation",
-        "computation",
+        "fine tuning",
+        "model saving and loading",
+        "visualization",
+        "define models",
+        "create form",
+        "initialize form",
+        "parse data",
+        "save data",
+        "execution of system command",
+        "define functions",
+        "compose functions",
+        "apply composed functions",
         "display results",
-        "parse XML response",
-        "assert condition",
-        "retrieve response",
-        "parse response",
-        "validate result",
-        "modular exponentiation",
-        "initialize variables",
-        "loop through exponentiation",
-        "compute modular exponentiation",
-        "return result"
+        "division operation",
+        "Define HTML template",
+        "Insert specific data into HTML template",
+        "Generate HTML pages using the templates",
+        "establish connection",
+        "send request",
+        "get response",
+        "find elements",
+        "check element count",
+        "looping through the range of k",
+        "calculating b^2^k modulo m"
     ],
     "functionality": [
         "data processing",
+        "model training and evaluation",
+        "visualization",
         "user interaction",
         "system control",
-        "function composition",
+        "compose functions",
+        "function application",
+        "arithmetic operations",
+        "pattern matching",
+        "mathematical operation",
+        "Web page generation",
         "data retrieval",
-        "mathematical computation",
-        "unsupervised out-of-distribution detection",
-        "model training",
-        "out-of-distribution detection",
-        "form handling",
-        "localization",
-        "math operations",
-        "higher-order functions",
-        "web page rendering",
-        "data visualization",
-        "web page generation",
-        "image comparison",
-        "testing",
-        "validation"
+        "mathematical computation"
     ],
     "resource usage": [
         "CPU Cycles",
-        "GPU ComputeOperations",
+        "CPU cycles",
+        "GPU Compute Operations",
+        "Memory for storing HTML templates",
         "Network Bandwidth"
     ],
     "computation operation": {
         "mathematical operation": [
-            "addition",
             "division",
+            "cross entropy calculation",
+            "discrepancy calculation",
+            "addition",
             "multiplication",
-            "modular exponentiation",
-            "cross entropy loss",
-            "standard deviation calculation",
-            "compute power flow"
+            "exponentiation",
+            "modulo operation"
         ],
-        "algorithmic operation": [
-            "shuffling",
-            "data sampling",
-            "training step"
-        ],
+        "algorithmic operation": [],
         "statistical operation": []
     },
-    "user interaction": {
-        "display": [
-            "visualization with Visdom",
-            "data visualization",
-            "displaying full name in admin change list",
-            "plotting distribution"
-        ],
-        "UIComponents": [
-            "editable form field",
-            "admin change list form",
-            "responsive divs",
-            "image galleries",
-            "responsive div",
-            "gallery",
-            "image container"
-        ],
-        "Display": [
-            "render images",
-            "display project and layer names",
-            "embedding images",
-            "SVG manipulation"
-        ],
-        "userInput": [],
-        "user input": []
-    },
+    "user interaction": [
+        "form submission",
+        "Display information in web page"
+    ],
     "data processing": {
-        "data preparation": [
-            "transform data",
-            "normalize data",
-            "data augmentation",
-            "normalization",
-            "initialize form with instance data",
-            "validate units",
-            "strip whitespace"
-        ],
-        "data retrieval": [
-            "fetching records",
-            "load CIFAR10 dataset",
-            "load MNIST dataset",
-            "loading datasets",
-            "retrieve instance initial data"
-        ],
         "data transformation": [
+            "normalization",
+            "random cropping",
             "random horizontal flip",
-            "random crop",
-            "convert to tensor",
-            "normalize",
-            "tensor conversion",
-            "split name into first_name and last_name",
-            "split full name into first and last name",
-            "compose functions",
-            "apply function sequence",
-            "formatting HTML content",
-            "embedding dynamic values",
-            "convert to numpy array",
-            "parse XML"
-        ],
-        "data validation": [
-            "none",
-            "cleaned data",
-            "pattern matching",
-            "type checking",
-            "assert length",
-            "check required keys"
+            "split string",
+            "function application",
+            "Insert specific data into HTML template"
         ],
         "string manipulation": [
-            "concatenate first_name and last_name",
-            "split name string",
-            "find substring",
-            "replace characters"
+            "concatenate",
+            "split",
+            "HTML template string manipulation"
         ],
+        "data preparation": [],
+        "Data Retrieval": [],
+        "data retrieval": [],
+        "data validation": [],
+        "Data Validation": [],
+        "Data Preparation": [],
         "Data Transformation": [],
         "String Manipulation": []
     },
     "file operation": [
-        "model checkpoint saving",
-        "model checkpoint loading",
-        "gettext file compilation",
-        "gettext message extraction",
-        "message compilation",
-        "message extraction",
-        "file download"
+        "file reading",
+        "model saving and loading",
+        "HTML file generation"
     ],
     "dependency relations": [
         "torch",
-        "torchvision",
+        "torch.nn",
+        "torch.optim",
+        "torch.utils.data",
+        "torchvision.utils",
+        "torchvision.transforms",
+        "torchvision.datasets",
         "visdom",
-        "django",
-        "gettext",
-        "svg-pan-zoom",
-        "xml.etree.ElementTree",
-        "numpy",
-        "matplotlib",
-        "pandas"
+        "backbone.densenet",
+        "config",
+        "data.datasets",
+        "utils",
+        "Django",
+        "forms",
+        "Python's built-in library",
+        "svg-pan-zoom"
     ],
     "algorithm": [
-        "Fast Modular Exponentiation",
-        "unsupervised out-of-distribution detection by maximum classifier discrepancy",
-        "Maximum Classifier Discrepancy",
+        "DenseNet",
+        "Stochastic Gradient Descent (SGD)",
+        "CrossEntropyLoss",
         "function composition",
-        "Quicksort"
+        "Fast Modular Exponentiation"
     ],
     "advanced techniques": [
-        "Discrepancy Loss",
-        "learning rate scheduler",
-        "Unsupervised Learning",
-        "Out-of-distribution Detection",
-        "Machine Learning"
+        "Deep Learning",
+        "Data Augmentation",
+        "functional programming",
+        "pattern matching"
     ],
     "programming language": [
         "Python",
         "Clojure",
         "HTML",
-        "JavaScript",
-        "CSS"
+        "JavaScript"
     ],
     "implementation style": [
         "procedural",
         "object-oriented",
-        "functional"
+        "functional",
+        "Procedural"
     ],
-    "security": [
-        "authentication",
-        "cryptography"
-    ],
-    "error handling": [
-        "exception management",
-        "filter warnings",
-        "assertion",
-        "form validation"
-    ],
-    "logging": [
-        "plotting loss",
-        "logger creation"
-    ],
+    "security": [],
+    "error handling": [],
+    "logging": [],
     "data structures": [
-        "string",
-        "list",
         "integer",
-        "tensor",
+        "list",
         "dictionary",
+        "class",
         "form",
-        "function",
-        "closure",
-        "JavaScript objects",
-        "model",
-        "HTML elements",
-        "CSS rules",
-        "HTML structure",
-        "CSS styles",
-        "dict"
+        "functions",
+        "String",
+        "string"
     ],
     "implementation logic": [
-        "conditional",
         "iterative",
-        "loop",
-        "event-driven",
-        "function call",
-        "nested closures",
-        "partial application",
-        "higher-order functions",
-        "function application"
+        "conditional",
+        "direct",
+        "sequential",
+        "Sequential"
     ]
 }

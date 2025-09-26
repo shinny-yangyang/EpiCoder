@@ -1,259 +1,166 @@
 {
     "programming language": {
-        "Python": 15,
-        "Clojure": 2,
-        "HTML": 2,
-        "JavaScript": 2,
-        "CSS": 1
+        "Python": 6,
+        "Clojure": 1,
+        "HTML": 1,
+        "JavaScript": 1
     },
     "workflow": {
-        "data loading": 3,
-        "data transformation": 2,
-        "model initialization": 2,
-        "fine-tuning": 2,
-        "function definition": 2,
-        "function composition": 2,
-        "function application": 2,
-        "HTML structure definition": 2,
-        "CSS styling": 2,
-        "Image embedding": 2,
-        "send request": 2,
-        "data visualization": 1,
-        "pre-training": 1,
+        "data loading": 1,
+        "data transformation": 1,
+        "model creation": 1,
+        "training procedure": 1,
         "evaluation": 1,
-        "checkpoint saving": 1,
-        "data preprocessing": 1,
-        "loss definition": 1,
-        "optimizer setup": 1,
-        "scheduler setup": 1,
-        "training": 1,
-        "validation": 1,
-        "testing": 1,
-        "model saving": 1,
-        "data modeling": 1,
-        "form creation": 1,
-        "data saving": 1,
-        "gettext compilation": 1,
-        "gettext message extraction": 1,
-        "model definition": 1,
-        "form customization": 1,
-        "admin interface customization": 1,
-        "message compilation": 1,
-        "system command execution": 1,
-        "execute system command": 1,
-        "JavaScript initialization": 1,
-        "JavaScript functionality": 1,
-        "data validation": 1,
-        "computation": 1,
+        "fine tuning": 1,
+        "model saving and loading": 1,
+        "visualization": 1,
+        "define models": 1,
+        "create form": 1,
+        "initialize form": 1,
+        "parse data": 1,
+        "save data": 1,
+        "execution of system command": 1,
+        "define functions": 1,
+        "compose functions": 1,
+        "apply composed functions": 1,
         "display results": 1,
-        "parse XML response": 1,
-        "assert condition": 1,
-        "retrieve response": 1,
-        "parse response": 1,
-        "validate result": 1,
-        "modular exponentiation": 1,
-        "initialize variables": 1,
-        "loop through exponentiation": 1,
-        "compute modular exponentiation": 1,
-        "return result": 1
+        "division operation": 1,
+        "Define HTML template": 1,
+        "Insert specific data into HTML template": 1,
+        "Generate HTML pages using the templates": 1,
+        "establish connection": 1,
+        "send request": 1,
+        "get response": 1,
+        "find elements": 1,
+        "check element count": 1,
+        "looping through the range of k": 1,
+        "calculating b^2^k modulo m": 1
     },
     "implementation style": {
-        "procedural": 13,
-        "object-oriented": 4,
-        "functional": 2
+        "procedural": 5,
+        "object-oriented": 1,
+        "functional": 1,
+        "Procedural": 1
     },
     "functionality": {
-        "data processing": 5,
-        "user interaction": 2,
-        "system control": 2,
-        "function composition": 2,
-        "data retrieval": 2,
-        "mathematical computation": 2,
-        "unsupervised out-of-distribution detection": 1,
-        "model training": 1,
-        "out-of-distribution detection": 1,
-        "form handling": 1,
-        "localization": 1,
-        "math operations": 1,
-        "higher-order functions": 1,
-        "web page rendering": 1,
-        "data visualization": 1,
-        "web page generation": 1,
-        "image comparison": 1,
-        "testing": 1,
-        "validation": 1
+        "data processing": 2,
+        "model training and evaluation": 1,
+        "visualization": 1,
+        "user interaction": 1,
+        "system control": 1,
+        "compose functions": 1,
+        "function application": 1,
+        "arithmetic operations": 1,
+        "pattern matching": 1,
+        "mathematical operation": 1,
+        "Web page generation": 1,
+        "data retrieval": 1,
+        "mathematical computation": 1
     },
     "resource usage": {
-        "CPU Cycles": 10,
-        "GPU ComputeOperations": 2,
-        "Network Bandwidth": 2
+        "CPU Cycles": 4,
+        "CPU cycles": 2,
+        "GPU Compute Operations": 1,
+        "Memory for storing HTML templates": 1,
+        "Network Bandwidth": 1
+    },
+    "data processing": {
+        "data transformation": {
+            "normalization": 1,
+            "random cropping": 1,
+            "random horizontal flip": 1,
+            "split string": 1,
+            "function application": 1,
+            "Insert specific data into HTML template": 1
+        },
+        "string manipulation": {
+            "concatenate": 1,
+            "split": 1,
+            "HTML template string manipulation": 1
+        },
+        "data preparation": 2,
+        "Data Retrieval": 2,
+        "data retrieval": 1,
+        "data validation": 1,
+        "Data Validation": 1,
+        "Data Preparation": 0,
+        "Data Transformation": 0,
+        "String Manipulation": 0
     },
     "computation operation": {
         "mathematical operation": {
-            "addition": 2,
             "division": 2,
-            "multiplication": 2,
-            "modular exponentiation": 2,
-            "cross entropy loss": 1,
-            "standard deviation calculation": 1,
-            "compute power flow": 1
+            "cross entropy calculation": 1,
+            "discrepancy calculation": 1,
+            "addition": 1,
+            "multiplication": 1,
+            "exponentiation": 1,
+            "modulo operation": 1
         },
-        "algorithmic operation": {
-            "shuffling": 2,
-            "data sampling": 1,
-            "training step": 1
-        },
-        "statistical operation": 2
+        "algorithmic operation": 2,
+        "statistical operation": 1
     },
-    "security": {
-        "authentication": 1,
-        "cryptography": 1
-    },
+    "security": {},
     "user interaction": {
-        "display": {
-            "visualization with Visdom": 1,
-            "data visualization": 1,
-            "displaying full name in admin change list": 1,
-            "plotting distribution": 1
-        },
-        "UIComponents": {
-            "editable form field": 1,
-            "admin change list form": 1,
-            "responsive divs": 1,
-            "image galleries": 1,
-            "responsive div": 1,
-            "gallery": 1,
-            "image container": 1
-        },
-        "Display": {
-            "render images": 1,
-            "display project and layer names": 1,
-            "embedding images": 1,
-            "SVG manipulation": 1
-        },
-        "userInput": 1,
-        "user input": 1
-    },
-    "data processing": {
-        "data preparation": {
-            "transform data": 1,
-            "normalize data": 1,
-            "data augmentation": 1,
-            "normalization": 1,
-            "initialize form with instance data": 1,
-            "validate units": 1,
-            "strip whitespace": 1
-        },
-        "data retrieval": {
-            "fetching records": 3,
-            "load CIFAR10 dataset": 1,
-            "load MNIST dataset": 1,
-            "loading datasets": 1,
-            "retrieve instance initial data": 1
-        },
-        "data transformation": {
-            "random horizontal flip": 2,
-            "random crop": 2,
-            "convert to tensor": 1,
-            "normalize": 1,
-            "tensor conversion": 1,
-            "split name into first_name and last_name": 1,
-            "split full name into first and last name": 1,
-            "compose functions": 1,
-            "apply function sequence": 1,
-            "formatting HTML content": 1,
-            "embedding dynamic values": 1,
-            "convert to numpy array": 1,
-            "parse XML": 1
-        },
-        "data validation": {
-            "none": 1,
-            "cleaned data": 1,
-            "pattern matching": 1,
-            "type checking": 1,
-            "assert length": 1,
-            "check required keys": 1
-        },
-        "string manipulation": {
-            "concatenate first_name and last_name": 1,
-            "split name string": 1,
-            "find substring": 1,
-            "replace characters": 1
-        },
-        "Data Transformation": 1,
-        "String Manipulation": 1
+        "form submission": 1,
+        "Display information in web page": 1
     },
     "file operation": {
-        "model checkpoint saving": 2,
-        "model checkpoint loading": 2,
-        "gettext file compilation": 1,
-        "gettext message extraction": 1,
-        "message compilation": 1,
-        "message extraction": 1,
-        "file download": 1
+        "file reading": 1,
+        "model saving and loading": 1,
+        "HTML file generation": 1
     },
-    "error handling": {
-        "exception management": 3,
-        "filter warnings": 2,
-        "assertion": 2,
-        "form validation": 1
-    },
-    "logging": {
-        "plotting loss": 1,
-        "logger creation": 1
-    },
+    "error handling": {},
+    "logging": {},
     "dependency relations": {
-        "torch": 2,
-        "torchvision": 2,
-        "visdom": 2,
-        "django": 2,
-        "gettext": 2,
-        "svg-pan-zoom": 2,
-        "xml.etree.ElementTree": 2,
-        "numpy": 1,
-        "matplotlib": 1,
-        "pandas": 1
+        "torch": 1,
+        "torch.nn": 1,
+        "torch.optim": 1,
+        "torch.utils.data": 1,
+        "torchvision.utils": 1,
+        "torchvision.transforms": 1,
+        "torchvision.datasets": 1,
+        "visdom": 1,
+        "backbone.densenet": 1,
+        "config": 1,
+        "data.datasets": 1,
+        "utils": 1,
+        "Django": 1,
+        "forms": 1,
+        "Python's built-in library": 1,
+        "svg-pan-zoom": 1
     },
     "algorithm": {
-        "Fast Modular Exponentiation": 2,
-        "unsupervised out-of-distribution detection by maximum classifier discrepancy": 1,
-        "Maximum Classifier Discrepancy": 1,
+        "DenseNet": 1,
+        "Stochastic Gradient Descent (SGD)": 1,
+        "CrossEntropyLoss": 1,
         "function composition": 1,
-        "Quicksort": 1
+        "Fast Modular Exponentiation": 1
     },
     "data structures": {
-        "string": 6,
-        "list": 5,
-        "integer": 4,
-        "tensor": 2,
-        "dictionary": 2,
-        "form": 2,
-        "function": 2,
-        "closure": 2,
-        "JavaScript objects": 2,
-        "model": 1,
-        "HTML elements": 1,
-        "CSS rules": 1,
-        "HTML structure": 1,
-        "CSS styles": 1,
-        "dict": 1
+        "integer": 2,
+        "list": 1,
+        "dictionary": 1,
+        "class": 1,
+        "form": 1,
+        "functions": 1,
+        "String": 1,
+        "string": 1
     },
     "implementation logic": {
-        "conditional": 9,
-        "iterative": 4,
-        "loop": 3,
-        "event-driven": 2,
-        "function call": 1,
-        "nested closures": 1,
-        "partial application": 1,
-        "higher-order functions": 1,
-        "function application": 1
+        "iterative": 2,
+        "conditional": 1,
+        "direct": 1,
+        "sequential": 1,
+        "Sequential": 1
     },
     "advanced techniques": {
-        "Discrepancy Loss": 1,
-        "learning rate scheduler": 1,
-        "Unsupervised Learning": 1,
-        "Out-of-distribution Detection": 1,
-        "Machine Learning": 1
+        "Deep Learning": 1,
+        "Data Augmentation": 1,
+        "functional programming": 1,
+        "pattern matching": 1
+    },
+    "parse_error_str": {
+        "rry but without the actual code, it's not possible to extract specific features and fill the categories. The provided \"../native/*.v3\" is a path, not a code snippet. Please provide a code snippet for analysis": 1
     }
 }

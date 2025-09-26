@@ -150,7 +150,7 @@ def extract_features(base_prompt, seed_data_paths, end_idx, output_dir='./output
 
 
 if __name__ == "__main__":
-    root_dir=""
+    root_dir="."
     prompt_idx=12
     prompt_file=f"{root_dir}/prompt/extract/prompt{prompt_idx}.txt"
     base_prompt=get_text(prompt_file)

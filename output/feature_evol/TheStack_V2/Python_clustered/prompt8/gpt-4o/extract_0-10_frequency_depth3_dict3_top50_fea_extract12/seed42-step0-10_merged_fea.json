@@ -16,6 +16,19 @@
             "send to API",
             "update database"
         ],
+        "find elements": {
+            "linear search": [
+                "sequential scan",
+                "brute-force search"
+            ],
+            "binary search": [
+                "recursive binary search",
+                "iterative binary search"
+            ],
+            "hash-based search": []
+        },
+        "data retrieval": [],
+        "element filtering": [],
         "assert condition": [
             "assertEqual",
             "assertNotEqual",
@@ -25,18 +38,51 @@
             "assertNotIn"
         ],
         "error handling": [
-            "custom exceptions",
             "finally block",
-            "try-except block",
-            "logging errors",
-            "retry mechanisms",
             "try-catch blocks",
-            "custom exception classes"
+            "retry mechanisms",
+            "custom exceptions",
+            "logging errors",
+            "custom exception classes",
+            "try-except block"
         ],
         "logging": [
             "info logging",
             "debug logging",
             "error logging"
+        ],
+        "get response": {
+            "send HTTP request": [
+                "GET request",
+                "POST request",
+                "PUT request"
+            ],
+            "handle response": [
+                "parse JSON",
+                "parse XML",
+                "check response status"
+            ],
+            "error handling": [
+                "retry on failure",
+                "log errors",
+                "notify user"
+            ]
+        },
+        "data pipeline": [
+            "data ingestion",
+            "ingest data",
+            "data transformation",
+            "store results",
+            "process data",
+            "data validation"
+        ],
+        "task automation": [
+            "monitor task status",
+            "automated testing",
+            "schedule tasks",
+            "continuous integration",
+            "trigger events",
+            "deployment automation"
         ],
         "checkpoint saving": [
             "save to local storage",
@@ -48,6 +94,29 @@
             "memory usage tracking",
             "resource allocation tracking"
         ],
+        "define models": {
+            "create neural network layers": [
+                "define input layer",
+                "configure hidden layers",
+                "specify output layer"
+            ],
+            "initialize parameters": [
+                "set initial weights",
+                "set initial biases",
+                "choose initializer method"
+            ],
+            "compile model": [
+                "select optimizer",
+                "define loss function",
+                "set evaluation metrics"
+            ],
+            "create data models": [],
+            "define relationships": [],
+            "set model constraints": []
+        },
+        "train models": [],
+        "evaluate models": [],
+        "deploy models": [],
         "display results": [
             "display as table",
             "display as chart",
@@ -79,23 +148,23 @@
             "workflow orchestration",
             "event-driven triggers"
         ],
-        "data pipeline": [
-            "data ingestion",
-            "data validation",
-            "data transformation"
-        ],
         "compute modular exponentiation": [
             "modular exponentiation using recursion",
             "modular exponentiation using iteration",
             "modular exponentiation with large numbers"
         ],
         "data validation": [
-            "check null values",
             "check input range",
             "handle missing values",
-            "validate data types",
+            "check value ranges",
+            "check null values",
             "validate data type",
-            "check value ranges"
+            "validate data types"
+        ],
+        "build pipeline": [
+            "pipeline configuration",
+            "pipeline scheduling",
+            "pipeline monitoring"
         ],
         "testing": {
             "unit testing": [
@@ -131,6 +200,23 @@
             "code comments",
             "README files"
         ],
+        "save data": {
+            "save to database": [
+                "insert with transaction",
+                "bulk save with batch processing"
+            ],
+            "save to file": [
+                "write to CSV",
+                "write to JSON"
+            ],
+            "save to cloud storage": [
+                "upload to S3",
+                "upload to Google Cloud Storage"
+            ]
+        },
+        "load data": [],
+        "process data": [],
+        "visualize data": [],
         "data transformation": [
             "string manipulation",
             "convert to integer",
@@ -152,12 +238,12 @@
     },
     "functionality": {
         "web page rendering": [
-            "CSS styling",
-            "DOM manipulation",
-            "responsive design",
             "JavaScript execution",
+            "responsive design",
             "lazy loading",
-            "HTML parsing"
+            "HTML parsing",
+            "DOM manipulation",
+            "CSS styling"
         ],
         "user authentication": [
             "login management",
@@ -165,13 +251,34 @@
             "password encryption"
         ],
         "database interaction": [
-            "CRUD operations",
             "SQL query execution",
-            "database transactions",
-            "ORM mapping",
-            "ORM integration",
+            "NoSQL database operations",
             "query optimization",
-            "NoSQL database operations"
+            "database transactions",
+            "ORM integration",
+            "CRUD operations",
+            "ORM mapping"
+        ],
+        "mathematical operation": [
+            "matrix multiplication",
+            "linear interpolation",
+            "differentiation",
+            "integration"
+        ],
+        "data analysis": [
+            "statistical analysis",
+            "trend analysis",
+            "data visualization",
+            "hypothesis testing"
+        ],
+        "network communication": [
+            "HTTP request",
+            "websocket communication",
+            "FTP transfer",
+            "HTTP requests",
+            "socket programming",
+            "websocket handling",
+            "SMTP email sending"
         ],
         "math operations": {
             "basic operations": [
@@ -188,16 +295,61 @@
             ]
         },
         "string operations": [
-            "concatenation",
-            "substring extraction",
             "pattern matching",
-            "string replacement"
+            "substring extraction",
+            "string replacement",
+            "concatenation"
         ],
         "file operations": [
             "read file",
             "write file",
             "append to file",
             "delete file"
+        ],
+        "arithmetic operations": {
+            "basic operations": [
+                "addition",
+                "subtraction"
+            ],
+            "advanced operations": [
+                "exponentiation",
+                "modular arithmetic"
+            ],
+            "matrix operations": []
+        },
+        "logical operations": [
+            "boolean logic",
+            "bitwise operations",
+            "comparison operations"
+        ],
+        "system control": {
+            "process management": [
+                "process creation",
+                "process termination"
+            ],
+            "resource allocation": [
+                "memory allocation",
+                "CPU scheduling"
+            ],
+            "system monitoring": [
+                "performance metrics",
+                "event logging"
+            ],
+            "error handling": [
+                "exception management",
+                "logging errors"
+            ]
+        },
+        "user interface": [
+            "form validation",
+            "button click events",
+            "output formatting",
+            "input validation",
+            "event handling"
+        ],
+        "data storage": [
+            "database CRUD operations",
+            "file read/write operations"
         ],
         "authentication": [
             "user login",
@@ -212,6 +364,24 @@
             "API authentication"
         ]
     },
+    "resource usage": {
+        "GPU Compute Operations": {
+            "matrix multiplication": [
+                "optimize memory usage",
+                "improve computational efficiency"
+            ],
+            "convolution operations": [
+                "implement FFT",
+                "optimize kernel execution"
+            ],
+            "memory management": [
+                "efficient memory allocation",
+                "memory deallocation strategies"
+            ]
+        },
+        "CPU Compute Operations": [],
+        "Memory Usage Analysis": []
+    },
     "computation operation": {
         "mathematical operation": {
             "modular exponentiation": [
@@ -220,32 +390,78 @@
                 "Montgomery reduction"
             ],
             "multiplication": [
-                "karatsuba algorithm",
+                "element-wise multiplication",
+                "matrix multiplication",
                 "schoolbook multiplication",
-                "FFT multiplication"
+                "FFT multiplication",
+                "karatsuba algorithm",
+                "scalar multiplication"
             ],
             "addition": [
+                "carry-save adder",
                 "carry-lookahead adder",
-                "ripple-carry adder",
-                "carry-save adder"
+                "scalar addition",
+                "matrix addition",
+                "vector addition",
+                "ripple-carry adder"
             ],
             "subtraction": [
+                "ripple-borrow subtractor",
                 "borrow-lookahead subtractor",
-                "borrow-save subtractor",
-                "ripple-borrow subtractor"
+                "borrow-save subtractor"
+            ],
+            "division": [
+                "integer division",
+                "floating-point division"
+            ],
+            "discrepancy calculation": [
+                "absolute discrepancy",
+                "percentage discrepancy"
+            ],
+            "matrix operations": [
+                "matrix addition",
+                "matrix multiplication"
+            ],
+            "vector operations": [
+                "dot product",
+                "cross product"
+            ],
+            "modulo operation": [
+                "modulo with remainder",
+                "modulo with negative numbers"
+            ],
+            "exponentiation": [
+                "power of two",
+                "exponentiation by squaring"
+            ],
+            "trigonometric functions": [
+                "sine calculation",
+                "cosine calculation",
+                "tangent calculation"
+            ],
+            "logarithmic functions": [
+                "log base 10",
+                "natural log",
+                "log base 2"
             ]
         },
         "algorithmic operation": {
             "search algorithms": [
                 "binary search",
+                "hash table lookup",
                 "linear search",
                 "jump search"
             ],
             "graph algorithms": [
                 "Dijkstra's algorithm",
+                "A* search",
+                "BFS",
+                "DFS",
                 "A* algorithm",
                 "Bellman-Ford algorithm"
-            ]
+            ],
+            "dynamic programming": [],
+            "binary search": []
         },
         "statistical operation": {
             "mean calculation": [
@@ -262,6 +478,20 @@
                 "population standard deviation",
                 "sample standard deviation",
                 "moving standard deviation"
+            ],
+            "regression analysis": [],
+            "standard deviation": [],
+            "correlation coefficient": []
+        },
+        "statistical operations": {
+            "mean calculation": [
+                "arithmetic mean",
+                "geometric mean",
+                "harmonic mean"
+            ],
+            "variance calculation": [
+                "population variance",
+                "sample variance"
             ]
         }
     },
@@ -298,7 +528,8 @@
                 "keyboard shortcuts",
                 "voice input",
                 "touch gestures"
-            ]
+            ],
+            "keyboard shortcuts handling": []
         },
         "UI components": {
             "navigation": [
@@ -330,7 +561,10 @@
                 "tabs",
                 "sidebars",
                 "breadcrumbs"
-            ]
+            ],
+            "button creation": [],
+            "modal dialogs": [],
+            "drag and drop interface": []
         },
         "userInput": {
             "text input": [
@@ -358,8 +592,17 @@
             "web display": [
                 "HTML rendering",
                 "dynamic content update"
-            ]
-        }
+            ],
+            "dark mode support": [],
+            "adaptive layout": [],
+            "internationalization support": []
+        },
+        "Display information in web page": [
+            "dynamic content rendering",
+            "responsive design adjustments",
+            "client-side rendering",
+            "server-side rendering"
+        ]
     },
     "data processing": {
         "Data Transformation": {
@@ -379,6 +622,35 @@
                 "float to string"
             ]
         },
+        "String Manipulation": {
+            "concatenation": [
+                "using + operator",
+                "using join method"
+            ],
+            "splitting": [
+                "split by delimiter",
+                "split by regex pattern"
+            ],
+            "replacing": [
+                "replace substring",
+                "replace using regex"
+            ],
+            "case conversion": [
+                "to upper case",
+                "to lower case",
+                "capitalize"
+            ]
+        },
+        "Data Retrieval": [
+            "fetch from database",
+            "read from file",
+            "API data fetching"
+        ],
+        "Data Validation": [
+            "validate email format",
+            "check for null values",
+            "validate data type"
+        ],
         "data retrieval": {
             "load CIFAR10 dataset": [
                 "download CIFAR10 dataset",
@@ -396,14 +668,71 @@
                 "read from CSV",
                 "read from JSON",
                 "read from SQL database"
-            ]
+            ],
+            "API data fetching": [],
+            "database queries": [],
+            "file system access": [],
+            "fetch from API": [],
+            "query database": [],
+            "load from local storage": [],
+            "database querying": [],
+            "web scraping": []
         },
         "data preparation": [
+            "shuffling dataset",
+            "data labeling",
             "split into training and testing sets",
-            "normalize data",
-            "handle missing values"
+            "handle missing values",
+            "splitting data into train/test sets",
+            "data filtering",
+            "data shuffling",
+            "data sampling",
+            "data splitting",
+            "data sorting",
+            "one-hot encoding",
+            "normalize data"
         ],
         "data transformation": {
+            "Insert specific data into HTML template": [
+                "template rendering",
+                "template sanitization",
+                "data binding"
+            ],
+            "function application": [
+                "batch processing",
+                "recursive function application",
+                "parallel execution"
+            ],
+            "data format conversion": [],
+            "data normalization": [],
+            "data aggregation": [],
+            "feature scaling": [
+                "max-abs scaling",
+                "min-max scaling",
+                "standard scaling",
+                "robust scaling"
+            ],
+            "feature encoding": [],
+            "data augmentation": [
+                "image rotation",
+                "horizontal flipping",
+                "color jittering"
+            ],
+            "random horizontal flip": [
+                "flip with probability",
+                "flip based on condition"
+            ],
+            "normalization": [
+                "min-max scaling",
+                "z-score standardization",
+                "z-score normalization",
+                "min-max normalization"
+            ],
+            "feature extraction": [
+                "t-SNE (t-Distributed Stochastic Neighbor Embedding)",
+                "PCA (Principal Component Analysis)",
+                "LDA (Linear Discriminant Analysis)"
+            ],
             "compose functions": [
                 "function chaining",
                 "function composition",
@@ -414,29 +743,28 @@
                 "convert pandas DataFrame to tensor",
                 "convert list to tensor"
             ],
-            "feature scaling": [
-                "min-max scaling",
-                "standard scaling",
-                "robust scaling"
-            ],
-            "feature extraction": [
-                "PCA (Principal Component Analysis)",
-                "LDA (Linear Discriminant Analysis)",
-                "t-SNE (t-Distributed Stochastic Neighbor Embedding)"
-            ],
-            "feature encoding": [],
-            "data augmentation": [],
             "string to integer conversion": [],
             "integer to string conversion": [],
-            "data normalization": []
+            "random cropping": [
+                "random cropping with padding",
+                "random cropping with aspect ratio preservation"
+            ]
         },
         "data validation": [
-            "check for null values",
-            "cross-validation",
-            "check for unique constraints",
             "train-validation split",
-            "validate data types",
-            "data consistency checks"
+            "check for null values",
+            "data consistency checks",
+            "range checking",
+            "verify data types",
+            "range validation",
+            "type checking",
+            "validate constraints",
+            "cross-validation",
+            "data type checking",
+            "check null values",
+            "check for unique constraints",
+            "schema validation",
+            "validate data types"
         ],
         "string manipulation": {
             "find substring": [
@@ -460,6 +788,30 @@
             "reset DataFrame index",
             "drop zero columns",
             "remove duplicates"
+        ]
+    },
+    "dependency relations": {
+        "torch": [
+            "torch.nn",
+            "torch.optim",
+            "torch.utils"
+        ],
+        "numpy": [],
+        "pandas": [],
+        "Python's built-in library": [
+            "os module for file operations",
+            "sys module for system-specific parameters",
+            "math module for mathematical functions"
+        ],
+        "external libraries": [
+            "NumPy for numerical computations",
+            "Pandas for data manipulation",
+            "Requests for HTTP requests"
+        ],
+        "web services": [
+            "Amazon S3 for cloud storage",
+            "REST APIs for data exchange",
+            "OAuth for authentication"
         ]
     },
     "algorithm": {
@@ -494,6 +846,24 @@
                 "graph clustering"
             ]
         },
+        "CrossEntropyLoss": [
+            "categorical cross-entropy",
+            "binary cross-entropy",
+            "sparse categorical cross-entropy",
+            "weighted cross-entropy"
+        ],
+        "optimization": [
+            "gradient descent",
+            "stochastic gradient descent",
+            "adam optimizer",
+            "rmsprop"
+        ],
+        "machine learning": [
+            "supervised learning",
+            "unsupervised learning",
+            "reinforcement learning",
+            "transfer learning"
+        ],
         "Quicksort": [
             "3-way quicksort",
             "dual-pivot quicksort",
@@ -508,7 +878,24 @@
             "binary heapsort",
             "ternary heapsort",
             "smoothsort"
-        ]
+        ],
+        "function composition": {
+            "chained function calls": [
+                "nested calls",
+                "flat chaining"
+            ],
+            "currying": [
+                "partial application",
+                "lambda currying"
+            ],
+            "function piping": [
+                "forward piping",
+                "backward piping"
+            ],
+            "function overloading": []
+        },
+        "recursion": [],
+        "dynamic programming": []
     },
     "advanced techniques": {
         "Machine Learning": [

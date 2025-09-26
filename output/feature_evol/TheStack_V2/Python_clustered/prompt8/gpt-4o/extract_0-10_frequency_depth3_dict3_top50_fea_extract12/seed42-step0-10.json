@@ -64,6 +64,59 @@
     },
     {
         "expanded feature": {
+            "functionality": {
+                "mathematical operation": [
+                    "matrix multiplication",
+                    "linear interpolation",
+                    "differentiation",
+                    "integration"
+                ],
+                "data analysis": [
+                    "statistical analysis",
+                    "trend analysis",
+                    "data visualization",
+                    "hypothesis testing"
+                ],
+                "network communication": [
+                    "HTTP request",
+                    "websocket communication",
+                    "FTP transfer",
+                    "SMTP email sending"
+                ]
+            },
+            "algorithm": {
+                "CrossEntropyLoss": [
+                    "categorical cross-entropy",
+                    "binary cross-entropy",
+                    "sparse categorical cross-entropy",
+                    "weighted cross-entropy"
+                ],
+                "optimization": [
+                    "gradient descent",
+                    "stochastic gradient descent",
+                    "adam optimizer",
+                    "rmsprop"
+                ],
+                "machine learning": [
+                    "supervised learning",
+                    "unsupervised learning",
+                    "reinforcement learning",
+                    "transfer learning"
+                ]
+            }
+        },
+        "features": {
+            "functionality": [
+                "mathematical operation"
+            ],
+            "algorithm": [
+                "CrossEntropyLoss"
+            ]
+        },
+        "idx": 0
+    },
+    {
+        "expanded feature": {
             "workflow": {
                 "parse response": [
                     "extract data",
@@ -123,6 +176,57 @@
     },
     {
         "expanded feature": {
+            "workflow": {
+                "find elements": {
+                    "linear search": [
+                        "sequential scan",
+                        "brute-force search"
+                    ],
+                    "binary search": [
+                        "recursive binary search",
+                        "iterative binary search"
+                    ],
+                    "hash-based search": []
+                },
+                "data retrieval": [],
+                "element filtering": []
+            },
+            "functionality": {
+                "arithmetic operations": {
+                    "basic operations": [
+                        "addition",
+                        "subtraction"
+                    ],
+                    "advanced operations": [
+                        "exponentiation",
+                        "modular arithmetic"
+                    ],
+                    "matrix operations": []
+                },
+                "logical operations": [
+                    "boolean logic",
+                    "bitwise operations",
+                    "comparison operations"
+                ],
+                "string operations": [
+                    "concatenation",
+                    "substring extraction",
+                    "pattern matching"
+                ]
+            }
+        },
+        "features": {
+            "workflow": [
+                "find elements"
+            ],
+            "functionality": [
+                "arithmetic operations"
+            ]
+        },
+        "idx": 1
+    },
+    {
+        "expanded feature": {
             "data processing": {
                 "Data Transformation": {
                     "string manipulation": [
@@ -169,6 +273,79 @@
             },
             "workflow": [
                 "assert condition"
+            ]
+        },
+        "idx": 2
+    },
+    {
+        "expanded feature": {
+            "data processing": {
+                "String Manipulation": {
+                    "concatenation": [
+                        "using + operator",
+                        "using join method"
+                    ],
+                    "splitting": [
+                        "split by delimiter",
+                        "split by regex pattern"
+                    ],
+                    "replacing": [
+                        "replace substring",
+                        "replace using regex"
+                    ],
+                    "case conversion": [
+                        "to upper case",
+                        "to lower case",
+                        "capitalize"
+                    ]
+                },
+                "Data Retrieval": [
+                    "fetch from database",
+                    "read from file",
+                    "API data fetching"
+                ],
+                "Data Validation": [
+                    "validate email format",
+                    "check for null values",
+                    "validate data type"
+                ]
+            },
+            "workflow": {
+                "get response": {
+                    "send HTTP request": [
+                        "GET request",
+                        "POST request",
+                        "PUT request"
+                    ],
+                    "handle response": [
+                        "parse JSON",
+                        "parse XML",
+                        "check response status"
+                    ],
+                    "error handling": [
+                        "retry on failure",
+                        "log errors",
+                        "notify user"
+                    ]
+                },
+                "data pipeline": [
+                    "ingest data",
+                    "process data",
+                    "store results"
+                ],
+                "task automation": [
+                    "schedule tasks",
+                    "trigger events",
+                    "monitor task status"
+                ]
+            }
+        },
+        "features": {
+            "data processing": {
+                "String Manipulation": []
+            },
+            "workflow": [
+                "get response"
             ]
         },
         "idx": 2
@@ -261,6 +438,59 @@
     },
     {
         "expanded feature": {
+            "workflow": {
+                "define models": {
+                    "create neural network layers": [
+                        "define input layer",
+                        "configure hidden layers",
+                        "specify output layer"
+                    ],
+                    "initialize parameters": [
+                        "set initial weights",
+                        "set initial biases",
+                        "choose initializer method"
+                    ],
+                    "compile model": [
+                        "select optimizer",
+                        "define loss function",
+                        "set evaluation metrics"
+                    ]
+                },
+                "train models": [],
+                "evaluate models": [],
+                "deploy models": []
+            },
+            "resource usage": {
+                "GPU Compute Operations": {
+                    "matrix multiplication": [
+                        "optimize memory usage",
+                        "improve computational efficiency"
+                    ],
+                    "convolution operations": [
+                        "implement FFT",
+                        "optimize kernel execution"
+                    ],
+                    "memory management": [
+                        "efficient memory allocation",
+                        "memory deallocation strategies"
+                    ]
+                },
+                "CPU Compute Operations": [],
+                "Memory Usage Analysis": []
+            }
+        },
+        "features": {
+            "workflow": [
+                "define models"
+            ],
+            "resource usage": [
+                "GPU Compute Operations"
+            ]
+        },
+        "idx": 3
+    },
+    {
+        "expanded feature": {
             "data processing": {
                 "data retrieval": {
                     "load CIFAR10 dataset": [
@@ -329,6 +559,66 @@
             },
             "workflow": [
                 "display results"
+            ]
+        },
+        "idx": 4
+    },
+    {
+        "expanded feature": {
+            "computation operation": {
+                "mathematical operation": {
+                    "division": [
+                        "integer division",
+                        "floating-point division"
+                    ],
+                    "discrepancy calculation": [
+                        "absolute discrepancy",
+                        "percentage discrepancy"
+                    ],
+                    "matrix operations": [
+                        "matrix addition",
+                        "matrix multiplication"
+                    ],
+                    "vector operations": [
+                        "dot product",
+                        "cross product"
+                    ]
+                },
+                "algorithmic operation": [
+                    "search algorithms",
+                    "graph algorithms",
+                    "dynamic programming"
+                ],
+                "statistical operation": [
+                    "mean calculation",
+                    "standard deviation calculation",
+                    "regression analysis"
+                ]
+            },
+            "functionality": {
+                "system control": [
+                    "process management",
+                    "resource allocation"
+                ],
+                "user interface": [
+                    "button click events",
+                    "form validation"
+                ],
+                "data storage": [
+                    "database CRUD operations",
+                    "file read/write operations"
+                ]
+            }
+        },
+        "features": {
+            "computation operation": {
+                "mathematical operation": [
+                    "division",
+                    "discrepancy calculation"
+                ]
+            },
+            "functionality": [
+                "system control"
             ]
         },
         "idx": 4
@@ -422,6 +712,57 @@
     },
     {
         "expanded feature": {
+            "computation operation": {
+                "mathematical operation": {
+                    "addition": [
+                        "vector addition",
+                        "matrix addition",
+                        "scalar addition"
+                    ],
+                    "multiplication": [
+                        "matrix multiplication",
+                        "element-wise multiplication",
+                        "scalar multiplication"
+                    ],
+                    "subtraction": [],
+                    "division": []
+                },
+                "algorithmic operation": [
+                    "binary search",
+                    "dynamic programming",
+                    "graph algorithms"
+                ],
+                "statistical operation": [
+                    "mean calculation",
+                    "standard deviation",
+                    "correlation coefficient"
+                ]
+            },
+            "dependency relations": {
+                "torch": [
+                    "torch.nn",
+                    "torch.optim",
+                    "torch.utils"
+                ],
+                "numpy": [],
+                "pandas": []
+            }
+        },
+        "features": {
+            "computation operation": {
+                "mathematical operation": [
+                    "addition",
+                    "multiplication"
+                ]
+            },
+            "dependency relations": [
+                "torch"
+            ]
+        },
+        "idx": 5
+    },
+    {
+        "expanded feature": {
             "workflow": {
                 "compute modular exponentiation": [
                     "modular exponentiation using recursion",
@@ -463,6 +804,71 @@
             ],
             "algorithm": [
                 "Quicksort"
+            ]
+        },
+        "idx": 6
+    },
+    {
+        "expanded feature": {
+            "data processing": {
+                "data transformation": {
+                    "Insert specific data into HTML template": [
+                        "template rendering",
+                        "template sanitization",
+                        "data binding"
+                    ],
+                    "function application": [
+                        "batch processing",
+                        "recursive function application",
+                        "parallel execution"
+                    ],
+                    "data format conversion": [],
+                    "data normalization": [],
+                    "data aggregation": []
+                },
+                "data retrieval": [
+                    "API data fetching",
+                    "database queries",
+                    "file system access"
+                ],
+                "data preparation": [
+                    "data filtering",
+                    "data sorting",
+                    "data sampling"
+                ],
+                "data validation": [
+                    "schema validation",
+                    "data type checking",
+                    "range validation"
+                ]
+            },
+            "workflow": {
+                "define models": [
+                    "create data models",
+                    "define relationships",
+                    "set model constraints"
+                ],
+                "build pipeline": [
+                    "pipeline configuration",
+                    "pipeline scheduling",
+                    "pipeline monitoring"
+                ],
+                "task automation": [
+                    "automated testing",
+                    "deployment automation",
+                    "continuous integration"
+                ]
+            }
+        },
+        "features": {
+            "data processing": {
+                "data transformation": [
+                    "Insert specific data into HTML template",
+                    "function application"
+                ]
+            },
+            "workflow": [
+                "define models"
             ]
         },
         "idx": 6
@@ -547,6 +953,70 @@
     {
         "expanded feature": {
             "workflow": {
+                "save data": {
+                    "save to database": [
+                        "insert with transaction",
+                        "bulk save with batch processing"
+                    ],
+                    "save to file": [
+                        "write to CSV",
+                        "write to JSON"
+                    ],
+                    "save to cloud storage": [
+                        "upload to S3",
+                        "upload to Google Cloud Storage"
+                    ]
+                },
+                "load data": [],
+                "process data": [],
+                "visualize data": []
+            },
+            "data processing": {
+                "data transformation": {
+                    "random horizontal flip": [
+                        "flip with probability",
+                        "flip based on condition"
+                    ],
+                    "normalization": [
+                        "min-max scaling",
+                        "z-score standardization"
+                    ],
+                    "data augmentation": [],
+                    "feature extraction": []
+                },
+                "data preparation": [
+                    "data splitting",
+                    "data shuffling",
+                    "data labeling"
+                ],
+                "data retrieval": [
+                    "fetch from API",
+                    "query database",
+                    "load from local storage"
+                ],
+                "data validation": [
+                    "check null values",
+                    "verify data types",
+                    "validate constraints"
+                ]
+            }
+        },
+        "features": {
+            "workflow": [
+                "save data"
+            ],
+            "data processing": {
+                "data transformation": [
+                    "random horizontal flip",
+                    "normalization"
+                ]
+            }
+        },
+        "idx": 7
+    },
+    {
+        "expanded feature": {
+            "workflow": {
                 "data transformation": [
                     "string manipulation",
                     "convert to integer",
@@ -625,6 +1095,68 @@
     },
     {
         "expanded feature": {
+            "algorithm": {
+                "function composition": {
+                    "chained function calls": [
+                        "nested calls",
+                        "flat chaining"
+                    ],
+                    "currying": [
+                        "partial application",
+                        "lambda currying"
+                    ],
+                    "function piping": [
+                        "forward piping",
+                        "backward piping"
+                    ],
+                    "function overloading": []
+                },
+                "recursion": [],
+                "dynamic programming": []
+            },
+            "functionality": {
+                "system control": {
+                    "process management": [
+                        "process creation",
+                        "process termination"
+                    ],
+                    "resource allocation": [
+                        "memory allocation",
+                        "CPU scheduling"
+                    ],
+                    "system monitoring": [
+                        "performance metrics",
+                        "event logging"
+                    ],
+                    "error handling": [
+                        "exception management",
+                        "logging errors"
+                    ]
+                },
+                "user interface": [
+                    "input validation",
+                    "output formatting",
+                    "event handling"
+                ],
+                "network communication": [
+                    "socket programming",
+                    "HTTP requests",
+                    "websocket handling"
+                ]
+            }
+        },
+        "features": {
+            "algorithm": [
+                "function composition"
+            ],
+            "functionality": [
+                "system control"
+            ]
+        },
+        "idx": 8
+    },
+    {
+        "expanded feature": {
             "workflow": {
                 "data preprocessing": [
                     "data normalization",
@@ -668,6 +1200,91 @@
                     "convert to tensor"
                 ]
             }
+        },
+        "idx": 9
+    },
+    {
+        "expanded feature": {
+            "computation operation": {
+                "mathematical operation": {
+                    "modulo operation": [
+                        "modulo with remainder",
+                        "modulo with negative numbers"
+                    ],
+                    "exponentiation": [
+                        "power of two",
+                        "exponentiation by squaring"
+                    ],
+                    "trigonometric functions": [
+                        "sine calculation",
+                        "cosine calculation",
+                        "tangent calculation"
+                    ],
+                    "logarithmic functions": [
+                        "log base 10",
+                        "natural log",
+                        "log base 2"
+                    ]
+                },
+                "algorithmic operation": {
+                    "search algorithms": [
+                        "binary search",
+                        "linear search",
+                        "hash table lookup"
+                    ],
+                    "graph algorithms": [
+                        "Dijkstra's algorithm",
+                        "A* search",
+                        "BFS",
+                        "DFS"
+                    ]
+                },
+                "statistical operations": {
+                    "mean calculation": [
+                        "arithmetic mean",
+                        "geometric mean",
+                        "harmonic mean"
+                    ],
+                    "variance calculation": [
+                        "population variance",
+                        "sample variance"
+                    ]
+                }
+            },
+            "user interaction": {
+                "Display information in web page": [
+                    "dynamic content rendering",
+                    "responsive design adjustments",
+                    "client-side rendering",
+                    "server-side rendering"
+                ],
+                "user input": [
+                    "form validation",
+                    "input sanitization",
+                    "keyboard shortcuts handling"
+                ],
+                "UI components": [
+                    "button creation",
+                    "modal dialogs",
+                    "drag and drop interface"
+                ],
+                "display methods": [
+                    "dark mode support",
+                    "adaptive layout",
+                    "internationalization support"
+                ]
+            }
+        },
+        "features": {
+            "computation operation": {
+                "mathematical operation": [
+                    "modulo operation",
+                    "exponentiation"
+                ]
+            },
+            "user interaction": [
+                "Display information in web page"
+            ]
         },
         "idx": 9
     },
@@ -734,6 +1351,76 @@
                 "string manipulation": [
                     "find substring",
                     "replace characters"
+                ]
+            }
+        },
+        "idx": 10
+    },
+    {
+        "expanded feature": {
+            "dependency relations": {
+                "Python's built-in library": [
+                    "os module for file operations",
+                    "sys module for system-specific parameters",
+                    "math module for mathematical functions"
+                ],
+                "external libraries": [
+                    "NumPy for numerical computations",
+                    "Pandas for data manipulation",
+                    "Requests for HTTP requests"
+                ],
+                "web services": [
+                    "Amazon S3 for cloud storage",
+                    "REST APIs for data exchange",
+                    "OAuth for authentication"
+                ]
+            },
+            "data processing": {
+                "data transformation": {
+                    "random cropping": [
+                        "random cropping with padding",
+                        "random cropping with aspect ratio preservation"
+                    ],
+                    "normalization": [
+                        "min-max normalization",
+                        "z-score normalization"
+                    ],
+                    "data augmentation": [
+                        "image rotation",
+                        "horizontal flipping",
+                        "color jittering"
+                    ],
+                    "feature scaling": [
+                        "standard scaling",
+                        "robust scaling",
+                        "max-abs scaling"
+                    ]
+                },
+                "data preparation": [
+                    "splitting data into train/test sets",
+                    "shuffling dataset",
+                    "one-hot encoding"
+                ],
+                "data retrieval": [
+                    "database querying",
+                    "web scraping",
+                    "API data fetching"
+                ],
+                "data validation": [
+                    "schema validation",
+                    "range checking",
+                    "type checking"
+                ]
+            }
+        },
+        "features": {
+            "dependency relations": [
+                "Python's built-in library"
+            ],
+            "data processing": {
+                "data transformation": [
+                    "random cropping",
+                    "normalization"
                 ]
             }
         },
