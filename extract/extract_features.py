@@ -15,6 +15,39 @@ from utils.file_operation import jsonl2json, sort_jsonl_file
 
 lock = threading.Lock()
 random.seed(0)
+DEFAULT_CODE_EXTENSIONS = {
+    ".py",
+    ".js",
+    ".ts",
+    ".jsx",
+    ".tsx",
+    ".java",
+    ".c",
+    ".cc",
+    ".cpp",
+    ".cxx",
+    ".h",
+    ".hpp",
+    ".cs",
+    ".go",
+    ".rb",
+    ".rs",
+    ".php",
+    ".swift",
+    ".kt",
+    ".scala",
+    ".sh",
+    ".ps1",
+    ".sql",
+    # ".json",
+    # ".yaml",
+    # ".yml",
+    # ".toml",
+    # ".ini",
+    # ".cfg",
+    # ".txt",
+    # ".md"
+}
 def get_text(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         content = file.read()
@@ -149,17 +182,99 @@ def extract_features(base_prompt, seed_data_paths, end_idx, output_dir='./output
     jsonl2json(save_path)
 
 
+def load_code_files_from_directory(
+    directory: str,
+    allowed_extensions: set[str] | None = None,
+    encoding: str = "utf-8",
+) -> list[dict]:
+    """遍历目录，读取所有符合后缀条件的代码文件并返回标准化样本列表。"""
+    if not os.path.isdir(directory):
+        raise FileNotFoundError(f"目录不存在: {directory}")
+
+    extensions = allowed_extensions or DEFAULT_CODE_EXTENSIONS
+    samples: list[dict] = []
+    for root, _dirs, files in os.walk(directory):
+        for file_name in files:
+            file_path = os.path.join(root, file_name)
+            _, ext = os.path.splitext(file_name)
+            if ext.lower() not in extensions:
+                continue
+            try:
+                with open(file_path, "r", encoding=encoding) as f:
+                    content = f.read()
+            except (UnicodeDecodeError, OSError):
+                continue
+            samples.append(
+                {
+                    "path": os.path.relpath(file_path, directory),
+                    "full_content": content,
+                }
+            )
+    return samples
+
+
+def extract_features_from_dir(
+    directory: str,
+    base_prompt: str,
+    output_dir: str,
+    allowed_extensions: set[str] | None = None,
+    begin_idx: int = 0,
+    end_idx: int | None = None,
+    encoding: str = "utf-8",
+):
+    """将目录下的代码文件视作样本输入，复用 extract_features 逻辑提取特征。"""
+    samples = load_code_files_from_directory(
+        directory,
+        allowed_extensions=allowed_extensions,
+        encoding=encoding,
+    )
+    if not samples:
+        raise ValueError(f"目录 {directory} 中未发现可用代码文件")
+
+    # 将 samples 写入临时 jsonl 以复用现有流程
+    tmp_jsonl_path = os.path.join(output_dir, "_tmp_dir_samples.jsonl")
+    os.makedirs(output_dir, exist_ok=True)
+    with open(tmp_jsonl_path, "w", encoding="utf-8") as f:
+        for idx, sample in enumerate(samples):
+            record = {
+                "idx": idx,
+                "path": sample.get("path"),
+                "full_content": sample.get("full_content", ""),
+            }
+            json.dump(record, f)
+            f.write("\n")
+
+    try:
+        end_idx = end_idx if end_idx is not None else len(samples)
+        extract_features(
+            base_prompt=base_prompt,
+            seed_data_paths=[tmp_jsonl_path],
+            end_idx=end_idx,
+            output_dir=output_dir,
+            begin_idx=begin_idx,
+        )
+    finally:
+        try:
+            os.remove(tmp_jsonl_path)
+        except OSError:
+            pass
+
+
 if __name__ == "__main__":
-    root_dir="."
-    prompt_idx=12
-    prompt_file=f"{root_dir}/prompt/extract/prompt{prompt_idx}.txt"
-    base_prompt=get_text(prompt_file)
-    seed_data_paths=[
-        'cluster/example/core_set_py0.jsonl'
-    ]
-    data_name='TheStack_V2/Python_clustered'
-    output_dir=f'{root_dir}/output/extract/{data_name}/prompt{prompt_idx}/features'
-    os.makedirs(output_dir,exist_ok=True)
-    extract_features(base_prompt=base_prompt,seed_data_paths=seed_data_paths, end_idx=10,
-                     output_dir=output_dir,
-                     begin_idx=0)
+    root_dir = "."
+    prompt_idx = 12
+    prompt_file = f"{root_dir}/prompt/extract/prompt{prompt_idx}.txt"
+    base_prompt = get_text(prompt_file)
+
+    source_directory = "/home/yangyang/workspace/fclib/src"
+    data_name = "workspace_fclib"
+    output_dir = f"{root_dir}/output/extract/{data_name}/prompt{prompt_idx}/features"
+    os.makedirs(output_dir, exist_ok=True)
+
+    extract_features_from_dir(
+        directory=source_directory,
+        base_prompt=base_prompt,
+        output_dir=output_dir,
+        begin_idx=0,
+        end_idx=100000,
+    )
