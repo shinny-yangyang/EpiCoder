@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 OPENROUTER_BASE_URL = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-DEFAULT_MODEL = os.environ.get("OPENROUTER_MODEL", "anthropic/claude-3.5-sonnet")
+DEFAULT_MODEL = os.environ.get("OPENROUTER_MODEL", "openai/gpt-4o")
 DEFAULT_MAX_RETRY = int(os.environ.get("OPENROUTER_MAX_RETRY", "5"))
 DEFAULT_TIMEOUT = int(os.environ.get("OPENROUTER_TIMEOUT", "60"))
 
@@ -121,4 +121,4 @@ def call_gpt4(messages, model: str = DEFAULT_MODEL, **kwargs):
         if key in unused_keys:
             continue
         filtered_kwargs[key] = value
-    return call_openrouter(messages, model=model, **filtered_kwargs)
+    return call_openrouter(messages, **filtered_kwargs)
