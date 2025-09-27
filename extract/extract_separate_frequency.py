@@ -3,7 +3,8 @@ import json
 
 if __name__ == "__main__":
     # pruned_feature_file with frequency
-    original_features_file = 'output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50.json'
+    # original_features_file = 'output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50.json'
+    original_features_file = 'output/extract/workspace_fclib/prompt12/statistics/extract_0-100000_frequency_depth3_dict3_top50.json'
     # output feature
     full_tree_file = original_features_file.replace(".json","_fea.json")
     # output frequency

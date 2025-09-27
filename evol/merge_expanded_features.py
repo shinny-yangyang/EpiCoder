@@ -102,9 +102,9 @@ if __name__ == "__main__":
 
     language="Python"
     # iter0
-    original_feature_file=f'output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50_fea.json'
-    original_frequency_file = f'output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50_fre.json'
-    evol_file=f'output/feature_evol/TheStack_V2/Python_clustered/prompt8/gpt-4o/extract_0-10_frequency_depth3_dict3_top50_fea_extract12/seed42-step0-10.json'
+    original_feature_file=f'output/extract/workspace_fclib/prompt12/statistics/extract_0-100000_frequency_depth3_dict3_top50_fea.json'
+    original_frequency_file = f'output/extract/workspace_fclib/prompt12/statistics/extract_0-100000_frequency_depth3_dict3_top50_fre.json'
+    evol_file=f'output/feature_evol/workspace_fclib/prompt8/gpt-4o/extract_0-100000_frequency_depth3_dict3_top50_fea_extract12/seed42-step0-1000.json'
     merged_feature_file=evol_file.replace('.json','_merged_fea.json')
     updated_feature_file=evol_file.replace('.json','_merged_fea_ori.json')
     updated_frequency_file=evol_file.replace('.json','_merged_fea_ori_fre.json')

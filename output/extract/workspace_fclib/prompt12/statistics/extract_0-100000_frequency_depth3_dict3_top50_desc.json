@@ -1,0 +1,56 @@
+{
+    "programming language": {
+        "descendant_count": 1
+    },
+    "workflow": {
+        "descendant_count": 1
+    },
+    "implementation style": {
+        "descendant_count": 1
+    },
+    "functionality": {
+        "descendant_count": 1
+    },
+    "resource usage": {
+        "descendant_count": 1
+    },
+    "computation operation": {
+        "descendant_count": 1
+    },
+    "security": {
+        "descendant_count": 1
+    },
+    "user interaction": {
+        "descendant_count": 1
+    },
+    "data processing": {
+        "descendant_count": 1
+    },
+    "file operation": {
+        "descendant_count": 1
+    },
+    "error handling": {
+        "descendant_count": 1
+    },
+    "logging": {
+        "descendant_count": 1
+    },
+    "dependency relations": {
+        "descendant_count": 1
+    },
+    "algorithm": {
+        "descendant_count": 1
+    },
+    "data structures": {
+        "descendant_count": 1
+    },
+    "implementation logic": {
+        "descendant_count": 1
+    },
+    "advanced techniques": {
+        "descendant_count": 1
+    },
+    "parse_error_str": {
+        "descendant_count": 1
+    }
+}

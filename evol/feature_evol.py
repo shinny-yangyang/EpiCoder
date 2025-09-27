@@ -286,17 +286,17 @@ def main():
     feature_evol_idx=8
     language="Python"
     # iter1
-    feature_file="output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50_fea.json"
-    fre_file="output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50_fre.json"
-    desc_file="output/extract/TheStack_V2/Python_clustered/prompt12/statistics/extract_0-10_frequency_depth3_dict3_top50_desc.json"
+    feature_file="output/extract/workspace_fclib/prompt12/statistics/extract_0-100000_frequency_depth3_dict3_top50_fea.json"
+    fre_file="output/extract/workspace_fclib/prompt12/statistics/extract_0-100000_frequency_depth3_dict3_top50.json"
+    desc_file="output/extract/workspace_fclib/prompt12/statistics/extract_0-100000_frequency_depth3_dict3_top50_desc.json"
     feature_file_name=extract_file_name(feature_file)
     descendant_count=count_descendant(fre_file, desc_file)
     begin_idx=0
-    end_idx=10
+    end_idx=1000
     conditions=[2,1,2,1]
     base_prompt_file=f"prompt/feature_evol/prompt{feature_evol_idx}"
     model='gpt-4o'
-    output_dir=f"output/feature_evol/TheStack_V2/Python_clustered/prompt{feature_evol_idx}/{model}/{feature_file_name}_extract{extract_prompt_idx}"
+    output_dir=f"output/feature_evol/workspace_fclib/prompt{feature_evol_idx}/{model}/{feature_file_name}_extract{extract_prompt_idx}"
     print(output_dir)
     output_path=f"{output_dir}/seed{seed}-step{begin_idx}-{end_idx}.jsonl"
     evol_steps(begin_idx, end_idx, language, descendant_count, base_prompt_file, feature_file, conditions, output_dir, output_path, model)

@@ -88,7 +88,8 @@ def keep_top_n(input_file, output_file, n, dict_min_size):
 
 
 if __name__ == "__main__":
-    input_file = 'output/extract/TheStack_V2/Python_clustered/prompt12/features/extract_0-10.json'
+    # input_file = 'output/extract/TheStack_V2/Python_clustered/prompt12/features/extract_0-10.json'
+    input_file = 'output/extract/workspace_fclib/prompt12/features/extract_0-100000.json'
 
     if input_file.endswith("jsonl"):
         jsonl2json(input_file, input_file.replace('.jsonl','.json'))
